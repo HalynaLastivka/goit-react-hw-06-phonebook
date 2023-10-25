@@ -13,7 +13,6 @@ const INITIAL_STATE = {
 const contactSlice = createSlice({
   // Ім'я слайсу
   name: 'contactSlice',
-  // Початковий стан редюсера слайсу
   initialState: INITIAL_STATE,
   reducers: {
     setFilter(state, action) {
