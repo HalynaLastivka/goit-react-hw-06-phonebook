@@ -20,18 +20,6 @@ export const App = () => {
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   const stringifiedContacts = localStorage.getItem('contacts');
-  //   const parseContacts = JSON.parse(stringifiedContacts) ?? [];
-  //   // setContacts(parseContacts);
-  //   dispatch(setContacts(parseContacts));
-  // }, []);
-
-  // useEffect(() => {
-  //   const stringifiedContact = JSON.stringify(contacts);
-  //   localStorage.setItem('contacts', stringifiedContact);
-  // }, [contacts]);
-
   const handleContact = (name, number) => {
     console.log('helllo1111');
     if (contacts.some(contact => contact.name === name)) {
