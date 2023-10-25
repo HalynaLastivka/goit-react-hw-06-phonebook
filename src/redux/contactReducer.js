@@ -31,5 +31,5 @@ const contactSlice = createSlice({
 // Генератори екшенів
 export const { setFilter, setContacts, addContact, deleteContact } =
   contactSlice.actions;
-// Редюсер слайсу
+
 export const contactReducer = contactSlice.reducer;
