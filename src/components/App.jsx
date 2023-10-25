@@ -6,12 +6,7 @@ import { FormPhone } from './FormPhone/FormPhone';
 // import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import {
-  addContact,
-  deleteContact,
-  setFilter,
-  setContacts,
-} from 'redux/contactReducer';
+import { addContact, deleteContact, setFilter } from 'redux/contactReducer';
 
 export const App = () => {
   const filter = useSelector(state => state.contacts.filter);
