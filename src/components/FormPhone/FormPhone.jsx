@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/contactReducer';
 import css from './FormPhone.module.css';
+import { nanoid } from 'nanoid';
 
-export const FormPhone = ({ handleContact }) => {
+export const FormPhone = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const contacts = useSelector(state => state.contacts.contacts);
+
+  const dispatch = useDispatch();
 
   const handleChange = ({ target: { name, value } }) => {
     if (name === 'name') {
@@ -11,6 +18,20 @@ export const FormPhone = ({ handleContact }) => {
     } else if (name === 'number') {
       setNumber(value);
     }
+  };
+
+  const handleContact = (name, number) => {
+    if (contacts.some(contact => contact.name === name)) {
+      alert(`${name} is already in contacts!`);
+      return;
+    }
+    const newOneContact = {
+      id: nanoid(),
+      name,
+      number,
+    };
+
+    dispatch(addContact(newOneContact));
   };
 
   const handleSubmit = event => {
